@@ -1,0 +1,16 @@
+.conteiner_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid black; */
+    border-top: 5px solid #1b3039;
+    border-bottom: 5px solid #1b3039;
+    margin: 10px;
+    padding: 10px;
+}
+
+.conteiner_form__inputs{
+    margin: 15px;
+}
+

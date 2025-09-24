@@ -1,0 +1,31 @@
+{% extends 'boxy/home_boxy.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}| Sumando boxies{%endblock title%}
+
+
+{% block boxy %}
+
+<div class="conteiner_form">
+
+    <form method="POST" action="{{ url_for('boxy.add_boxy') }}">
+        {{ form.hidden_tag() }}
+
+         <div class="conteiner_form__inputs">
+            {{ form.clave_boxy(class="form-control", placeholder='Clave boxy') }}
+        </div>
+
+        <div class="conteiner_form__inputs">
+            {{ form.sala(class="btn btn-primary", placeholder='Sala') }}
+        </div>
+
+        <div class="conteiner_form__inputs">
+            {{ wtf.form_field(form.submit, class="btn btn-primary") }}
+        </div>
+
+
+    </form>
+
+</div>
+
+{% endblock %}

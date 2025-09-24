@@ -1,0 +1,146 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: #fff59d;
+}
+
+.header{
+    background-color: #1b3039;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10px;
+}
+
+.header .logo {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    transition: all .3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .logo .title{
+    color: #fff;
+    margin-left: 10px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover{
+    color: #ffbc0e;
+}
+
+.header .btn button{
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 35px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+    margin: 0;
+}
+
+
+.header .botones a {
+  margin: 0;       /* elimina márgenes extra */
+  padding: 0;      /* opcional: quita relleno del <a> */
+}
+
+
+
+.header .botones {
+  display: flex;
+  gap: 0.5rem;   /* menos espacio entre ellos */
+
+}
+
+.header .btn button:hover{
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 500px; /* navbar más alta */
+        flex-direction: column; /* opcional: apilar logo y links */
+        padding: 1px;
+        max-width: 100%;
+    }
+
+    
+    .header .nav-links li {
+        display: block; /* opcional: que se vean en columna */
+        padding: 10px 0;
+    }
+
+    .header .nav-links a {
+        font-size: 24px; /* texto más grande */
+    }
+
+    .header .btn button {
+        padding: 9px 20px; /* botón más grande */
+        font-size: 25px;
+    }
+
+    .header .botones {
+    display: flex;
+    gap: 0.5rem;   /* menos espacio entre ellos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .header .logo img{
+    height: 140px;
+    width: auto;
+    transition: all .3s;
+    }
+
+    .header .logo img:hover{
+        transform: scale(1.1);
+    }
+
+}

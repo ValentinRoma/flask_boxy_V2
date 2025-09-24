@@ -1,0 +1,43 @@
+<header class="header">
+    <div class="logo">
+        <a href="{{ url_for('auth.inicio') }}">
+            <img src="{{url_for('auth.static', filename='auth/images/Logo2.jpg')}}" alt="Logo de la marca">
+        </a>
+
+        <a href="{{ url_for('auth.inicio') }}" style="text-decoration: none;">
+            <h1 class="title">Boxy</h1>
+        </a>
+
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('auth.inicio') }}">Inicio</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('boxy.home_boxy') }}">Sumar Boxy</a></li>
+            <!-- <li><a href="">Controla tu motor</a></li>
+            <li><a href="">Ver datos</a></li> -->
+            {% endif %}
+            <li><a href="https://www.google.com" target='_blank'>Ir a Google</a></li>
+            
+        </ul>
+    </nav>
+
+
+
+    <div class="botones">
+        {% if current_user.is_authenticated %}
+
+        <a href="{{ url_for('auth.logout') }}" class="btn"><button>Salir de la sesión</button></a>
+
+        {% else %}
+
+        <a href="{{ url_for('auth.login') }}" class="btn"><button>Iniciar Sesión</button></a>
+        <a href="{{ url_for('auth.register') }}" class="btn"><button>Registrarse</button></a>
+
+        {% endif %}
+
+    </div>
+
+</header>
+

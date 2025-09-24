@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final {% block title %}{%endblock title%}</title>
+
+    <link rel="shorcut icon" href="{{url_for('auth.static', filename='auth/images/Logo1.ico')}}">
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style_navbar.css')}}">
+    
+    <link rel='stylesheet' href="{{url_for('auth.static', filename='auth/css/style_footer.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style.css') }}">
+    {% block links %}{% endblock %}
+    {% block links2 %}{%endblock%}
+    {% block linkinstr %}{%endblock%}
+
+</head>
+<body>
+    
+ 
+    {% include 'auth/navbar.html' %}
+
+ 
+    
+    <main>
+
+    {% block home %}
+    {% endblock %}
+
+
+    {% block content %}
+    {% endblock %}
+
+
+
+    </main>
+
+    
+    {% include 'auth/footer.html' %}
+    
+    
+
+</body>
+</html>

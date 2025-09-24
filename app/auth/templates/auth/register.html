@@ -1,0 +1,57 @@
+{% extends 'auth/layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+        {% block title %}| Registro{%endblock title%}
+
+{% block content %}
+
+<div class="container">
+
+
+    <div class="container-text">
+        <i><h2 class="text-boxy">Boxy</h2></i>
+
+        <p class="slogan">
+                Boxy te ayuda a tener un control remoto sobre tu hogar. <br>
+                Adquiriendo cajas o boxies de control.<br>
+                ¿Qué esperas para automatizar tu casa?
+        </p>
+    </div>
+
+
+<div class="container-login">
+    
+    <div class="container-login-compact">
+    <form method="POST" action="{{ url_for('auth.register') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-text">
+            {{ form.email(class="form-control", placeholder='Correo electrónico') }}
+        </div>
+        <!-- <div class="form-text">
+            {{ form.username(class="form-control", placeholder='Nombre de usuario') }}
+        </div> -->
+        <div class="form-text">
+        {{ form.username(class="form-control", placeholder='Nombre de usuario') }}
+
+        {% for error in form.username.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+        </div>
+        <div class="form-text">
+            
+            {{form.password(class="form-control", placeholder='Contraseña')}}
+        </div>
+        <div class="form-text">
+            {{ form.confirm(class="form-control", placeholder='Confirmar contraseña') }}
+        </div>
+        <div class="btn-login">
+            {{ form.submit(class="btn btn-primary btn-mine") }}
+        </div>
+    </form>
+    
+    </div>
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'auth/home.html' %}
+
+{% block title %}| Inicio{%endblock title%}
+{% block linkinstr %}
+<link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style_instructions.css') }}">
+{%endblock%}
+
+{% block adding %}
+<div class="right_home__adding_boxy">
+
+    <div class="right_home__adding_boxy--instr">
+        <h2 class="right_home__adding_boxy--title">Estas son las instrucciones<br>para añadir boxies </h2>
+        <img src="{{ url_for('auth.static', filename='auth/images/rocket.jpg') }}" alt="">
+    </div>
+
+    <div class="right_home__adding_boxy--steps">
+        <div class="pasox"><h3>Paso 0: </h3><p>&nbsp;iniciar sesión</p></div>
+        <div class="pasox"><h3>Paso 1: </h3><p>&nbsp;ir a "Sumar Boxy",</p><br></div>
+        <div class="pasox"><h3>Paso 2: </h3><p>&nbsp;clickear en añadir boxy,</p><br></div>
+        <div class="pasox"><h3>Paso 3: </h3><p>&nbsp;usar clave boxy que se otorgó junto al micro</p><br></div>
+        <div class="pasox"><h3>Paso 4: </h3><p>&nbsp;poner un título a la sala donde estará tu boxy</p></div>
+        <div class="pasox">
+        <p>Por último, vas a ver tu boxy añadida y lista para monitorear esa sala.</p>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

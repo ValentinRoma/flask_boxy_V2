@@ -1,0 +1,69 @@
+{% extends 'auth/layout.html' %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('boxy.static', filename='boxy/css/style_boxy.css') }}">
+    <link rel="stylesheet" href="{{ url_for('boxy.static', filename='boxy/css/style_form_boxy.css') }}">
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style_home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style_fixed.css') }}">
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style_solutions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='auth/css/style_problems.css') }}">
+    
+{% endblock %}
+
+
+{% block home %}
+
+<div class="dad-conteiner">
+
+    <div class="left_home">
+        <div class="left_home__saludo">
+            
+            <h1 class="left_home__saludo--welcome">Bienvenido :) <br>
+                    {% if current_user.is_authenticated %}
+                        Hola, {{current_user.username}}!
+                    {%endif%}
+                
+            </h1>
+                
+        </div>
+
+        <div class="left_home__imgs">
+            <div class="left_home__img--fondo">
+                <img src="{{ url_for('auth.static', filename='auth/images/connections.jpg') }}" alt="">
+            </div>
+
+                    
+            <div class="left_home__img--encima">
+                <img src="{{ url_for('auth.static', filename='auth/images/phoneANDmicro.jpg') }}" alt="Imagen del esp32">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right_home">
+            {% block adding %}
+            
+            {% endblock %}
+    </div>
+
+
+
+
+
+</div>
+
+<div class="fixed_home" id="fixed">
+        {% include 'auth/fixed.html' %}
+</div>
+
+
+<div class="problems_home" id="problems">
+    {% include 'auth/problems.html' %}
+</div>
+
+<div class="solutions_home" id="solutions">
+    {% include 'auth/solutions.html' %}
+</div>
+
+
+{% endblock home %}

@@ -1,0 +1,108 @@
+.boxy-adding{
+    background-color: rgb(255, 255, 255);
+    width: 50vh;
+    border: 5px solid #111;
+    border-radius: 5px;
+    margin: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    transition: .5s;
+
+}
+
+.boxy-adding .element1 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 0;
+}
+
+.box_for_scroll{
+    overflow-y: auto;
+    height: 250px;
+}
+
+
+.boxy-adding .element2 {
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1; /* ocupa el espacio central */
+
+}
+
+.boxy-adding .element2 h4{
+    font-size: 20px;
+
+}
+
+.boxy-adding .element3 img {
+    width: 40px;
+    height: auto;
+}
+
+.boxy-adding:hover{
+    transform: scale(1.1);
+    
+}
+.boxy-adding .element2:hover {
+    color: rgba(200, 140, 50, 0.5);
+}
+
+.left_home__img--conecctions{
+    margin: 15px;
+}
+
+
+.dad-conteiner .left_home__img--conecctions img{
+    width: 700px;
+    height: 350px;
+    border-radius: 0;
+    margin: 5px;
+}
+
+.left_home__img--esp32{
+    margin: 15px;
+}
+
+.dad-conteiner .left_home__img--esp32 img{
+    width: 300px;
+    height: 350px;
+    border-radius: 0;
+    margin: 5px;
+}
+
+.right_home__adding_boxy{
+    border: 8px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    height: 600px;
+    min-width: 550px;
+}
+
+.right_home__adding_boxy--title{
+    font-size: 30px;
+    margin: 10px 5px;
+}
+
+.right_home__adding_boxy--selling{
+    font-size: 28px;
+    margin: 10px 5px;
+}
+
+.boxy-adding form{
+    background-color: #FFF;
+    border: none;
+}
+
+.boxy-adding button {
+    background-color: #FFF;
+    border: none;
+    cursor: pointer;
+}

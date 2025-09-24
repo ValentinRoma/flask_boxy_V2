@@ -1,0 +1,160 @@
+* {
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 8000;
+    color: rgba(0, 75, 0, .9);
+}
+
+
+
+img {
+    border-radius: 50px;
+    width: 7vw;
+    height: 25vh;
+    margin: auto;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* ocupa todo el espacio disponible */
+}
+
+footer{
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
+
+.container {
+    display: flex;
+    height: 50vh; /* Opcional: ocupa toda la altura */
+    width: 100%;
+    align-items: center;
+    background-color:#fff59d;
+}
+
+.container .container-text{
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+}
+
+.container .container-text .text-boxy{
+    font-size: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-left: 200px;
+    padding: 0;
+    align-self: flex-start;
+    color: rgb(0, 24, 45);
+}
+
+.container .container-text .slogan{
+    font-size: 20px;
+    text-align: left;
+    max-width: 550px;
+    margin-left: 210px;
+    align-self: flex-start;
+    font-size: 25px;
+}
+
+
+.container .container-login{
+    width: 300px;
+    max-width: 90%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 15px;
+    border: solid #055;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 0 20px 100px rgba(255, 255, 255, 0.1);
+    background-color: #dbb34c;
+}
+
+.container-login .btn-login{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: auto;
+    padding: 10px;
+    border: solid #055;
+    border-radius: 10px;
+    background-color: #099;
+    color: rgba(225, 220, 220);
+    display: flex;
+    align-items: center;
+    
+}
+
+.container-login .form-text{
+    margin: 0;
+    padding: 10px;
+}
+
+.container-login .form-text .form-control{
+     margin: 0;
+}
+
+.container-login-compact{
+    width: 250px;
+    max-width: 90%;
+    margin: 0;
+    padding: 1px;
+}
+
+.container-login .btn-login .btn-mine{
+        background-color: #099;
+        color: rgb(0, 24, 45);
+        border: none;
+        border-radius: 5px;
+        padding: 3px;
+        font-size: 36px;
+        margin: auto;
+        cursor: pointer;
+}
+
+
+
+.container-register{
+    width: 300px;
+    max-width: 90%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 25px;
+    border: solid #055;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 0 20px 100px rgba(255, 255, 255, 0.1);
+    background-color: #dbb34c;
+}
+
+.left_home__saludo--hola{
+    margin-left: 115px;
+}
+
+@media (max-width: 768px) {
+    
+    main{
+        max-width: 100%;
+    }
+    
+
+}

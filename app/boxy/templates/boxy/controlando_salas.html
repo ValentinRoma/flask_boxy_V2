@@ -1,0 +1,73 @@
+{% extends 'auth/home.html' %}
+
+{% block title %}| Control{%endblock title%}
+{% block links2 %}
+    <link rel="stylesheet" href="{{ url_for('boxy.static', filename='boxy/css/style_dashboard.css') }}">
+{%endblock%}
+
+{% block adding %}
+<div class="right_home__adding_boxy">
+
+    <h1 class="right_home__adding_boxy--title">Acá vamos a controlar<br>{{sala}}</h1>
+
+    
+    <div class="control__variables">
+      <h2 class="boton">Temperatura y humedad:</h2>
+        <div class="control__variables--temperatura">
+          <img src="{{ url_for('boxy.static', filename='boxy/images/temperatura_symbol.png') }}" alt="">
+          <p id="temp-value">--</p>
+        </div>
+        <div class="control__variables--humedad">
+          <img src="{{ url_for('boxy.static', filename='boxy/images/humedad_symbol.png') }}" alt="">
+          <p id="hum-value">--</p>
+        </div>    
+    </div>
+
+    <div class="control__actuador">
+      <h2 class="control__actuador--title">Control del sistema:</h2>
+        <button class="control__actuador--prendido" onclick="enviarAccion('prendido')">Prender</button>
+        <button class="control__actuador--apagado" onclick="enviarAccion('apagado')">Apagar</button>
+
+      <p id="respuesta"></p>
+
+    </div>
+
+
+<!-- <script>
+  function enviarAccion(accion) {
+      fetch('/api/accion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ accion: accion })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("respuesta").textContent = data.mensaje;
+      })
+      .catch(err => console.error(err));
+    }
+
+
+  function actualizarAmbiente() {
+    fetch('/api/ambiente')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('temp-value').textContent = data.temp + " °C";
+        document.getElementById('hum-value').textContent = data.hum + " %";
+      })
+      .catch(err => console.error(err));
+  }
+
+  setInterval(actualizarAmbiente, 2000);
+  actualizarAmbiente();
+</script> -->
+
+
+
+</div>
+
+<script src="{{ url_for('boxy.static', filename='boxy/js/code.js') }}"></script>
+
+{% endblock %}

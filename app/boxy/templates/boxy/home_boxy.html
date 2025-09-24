@@ -1,0 +1,77 @@
+{% extends 'auth/home.html' %}
+
+{% block title %}| Boxies{%endblock title%}
+
+{% block adding %}
+<div class="right_home__adding_boxy">
+
+    
+    <h2 class="right_home__adding_boxy--title">¿Ansioso por comenzar con boxy?</h2>
+
+    <h3 class="right_home__adding_boxy--selling">
+        {% if current_user.is_authenticated %}
+            {{current_user.username}}, vamos a añadir boxies 🤖
+        {%endif%}
+    </h3>
+    
+
+    <div class="boxy-adding">
+        <a class="element1" href="{{ url_for('boxy.add_boxy') }}"><img  src="{{url_for('boxy.static', filename='boxy/images/boxy.png')}}" alt="Logo de boxy"></a>
+        
+        <a class="element2" href="{{ url_for('boxy.add_boxy') }}">Añadir Boxies</a> 
+
+        <a class="element3" href="{{ url_for('boxy.add_boxy') }}"><img src="{{url_for('boxy.static', filename='boxy/images/adding_symbol.png')}}" alt="Logo de adding"></a>
+        
+    </div>
+
+
+    {% block boxy %} {% endblock %}
+
+    <!-- <div class="box_for_scroll">
+    {% for boxy in boxies %}
+    <div class="boxy-adding">
+        <a class="element1" href="{{ url_for('boxy.control', sala=boxy.sala, clave=boxy.clave) }}"><img  src="{{url_for('boxy.static', filename='boxy/images/rooms.jpg')}}" alt="Logo de boxy"></a>
+        
+        <a class="element2" href="{{ url_for('boxy.control', sala=boxy.sala, clave=boxy.clave) }}">           
+                <h4>Hecha un vistazo en {{boxy.sala}}</h4>           
+        </a> 
+
+        <a class="element3" href="{{ url_for('boxy.control', sala=boxy.sala, clave=boxy.clave) }}"><img src="{{url_for('boxy.static', filename='boxy/images/lupa.jpg')}}" alt="Logo de adding"></a>
+    </div>
+    {%endfor%}
+    </div> -->
+
+    <div class="box_for_scroll">
+    {% for boxy in boxies %}
+    <!-- <p>{{ boxy.clave }}</p> -->
+    <div class="boxy-adding">
+            <form action="{{ url_for('boxy.control') }}" method="POST">
+                <input type="hidden" name="clave" value="{{ boxy.clave }}">
+                    <button type="submit" class="element1">
+                        <img src="{{ url_for('boxy.static', filename='boxy/images/rooms.jpg') }}" alt="Logo de boxy">
+                    </button>
+            </form>
+
+            <form action="{{ url_for('boxy.control') }}" method="POST">
+                <input type="hidden" name="clave" value="{{ boxy.clave }}">
+                    <button type="submit" class="element2">
+                        <h4>Hecha un vistazo en {{ boxy.sala }}</h4>
+                    </button>
+            </form>
+
+            <form action="{{ url_for('boxy.control') }}" method="POST">
+                <input type="hidden" name="clave" value="{{ boxy.clave }}">
+                    <button type="submit" class="element3">
+                        <img src="{{ url_for('boxy.static', filename='boxy/images/lupa.jpg') }}" alt="Logo de boxy">
+                    </button>
+            </form>
+
+    </div>
+    {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,160 @@
+.dad-conteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 90vh;
+    flex-wrap: nowrap;
+}
+
+
+.left_home{
+    margin-left: auto;
+    min-width: 50vw;
+    /* border: 10px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left_home__saludo--welcome{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    width: 500px;
+    text-align: center;
+    margin: 15px 10px;
+    background: rgba(0, 200, 100, .25);
+    background-color: rgb(225,225,225, 1);
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.left_home__saludo--hola{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    width: 500px;
+    text-align: center;
+    margin: 0px 10px;
+    background: rgba(0, 200, 100, .25);
+    background-color: rgb(225,225,225, 1);
+    border-radius: 5px;
+
+}
+.left_home__imgs{
+    position: relative; /* El contenedor define el contexto de posicionamiento */
+    width: 500px; /* Ajusta el tamaño del contenedor */
+    height: 500px;
+}
+
+.left_home__img--fondo img{
+
+    border-radius: 25px;
+    border: 0;
+    position: absolute; /* Posiciona la imagen de fondo */
+    top: 0;
+    left: -55px;
+    height: 350px;
+    width: 450px;
+    z-index: 0; /* La imagen de fondo tendrá un z-index bajo */
+    opacity: 0.85;
+    animation: mover2 4s infinite alternate ease-in-out;
+}
+
+.left_home__img--encima img{
+    position: absolute; /* Posiciona la imagen que irá encima */
+    top: 200px; /* Ajusta la posición según necesites */
+    left: 150px;
+    height: 250px; /* Tamaño de la imagen que se superpone */
+    width: 350px; 
+    z-index: 1; /* Un z-index mayor la pondrá encima */
+    opacity: 0.75;
+    animation: mover2 4s infinite alternate ease-in-out;
+}
+
+.right_home{
+    margin: 10px;
+    margin-right: auto;
+    min-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes mover2 {
+  0%   { transform: translate(-20px, -15px); } /* arriba-izquierda */
+  25%  { transform: translate(20px, -15px); }  /* arriba-derecha */
+  50%  { transform: translate(20px, 20px); }   /* abajo-derecha */
+  75%  { transform: translate(-20px, 20px); }  /* abajo-izquierda */
+  100% { transform: translate(-20px, -15px); } /* vuelve al inicio */
+}
+
+
+/* Responsive Design */
+@media only screen and (max-width: 500px) {
+
+.dad-conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* min-height: 90vh; */
+    flex-wrap: wrap;
+}
+
+.dad-conteiner > div {
+    flex: 1 1 50%;
+}
+
+.left_home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.left_home__imgs{
+    position: relative; /* El contenedor define el contexto de posicionamiento */
+    width: auto; /* Ajusta el tamaño del contenedor */
+    height: auto;
+}
+
+.left_home__img--fondo img{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 250px;
+    animation: none;
+}
+.left_home__img--encima img{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 150px; /* Tamaño de la imagen que se superpone */
+    width: 250px; 
+    animation: none;
+}
+
+    .left_home__saludo--welcome{
+        max-width: 250px;
+    }
+
+.right_home{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+    width: 150px;
+}
+
+.right_home__adding_boxy{
+    max-width: 100%;
+    width: 150px;
+}
+
+
+}

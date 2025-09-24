@@ -1,0 +1,103 @@
+.control__variables{
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #000;
+    border-radius: 10px;
+    background-color: #FFF;
+    padding: 10px;
+    margin-bottom: 5px;
+    min-width: 400px;
+    align-items: center;
+}
+
+.control__actuador{
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: #FFF;
+    padding: 10px;
+    margin-top: 5px;
+    min-width: 400px;
+    align-items: center;
+}
+
+.control__variables--temperatura{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF;
+    min-width: 100px;
+}
+
+.control__variables--humedad{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF;
+    
+}
+
+.control__variables--temperatura img{
+    width: 45px;
+    height: 45px;
+    border-radius: 0;
+    margin: 10px;
+}
+
+.control__variables--humedad img{
+    width: 65px;
+    height: 65px;
+    border-radius: 0;
+    margin: 10px;
+    
+}
+
+.control__variables--humedad p{
+    /* border: 5px solid black; */
+    align-self: center;
+}
+.control__variables--temperatura p{
+    /* border: 5px solid black; */
+    align-self: center;
+}
+
+.control__actuador--prendido{
+    border: 10px solid 1b3039;
+    border-radius: 10px;
+    min-width: 150px;
+    margin-bottom: 5px;
+}
+
+.control__actuador--apagado{
+    border: 10px solid 1b3039;
+    border-radius: 10px;
+    min-width: 150px;
+    margin-top: 5px;
+}
+
+.control__actuador--title{
+    margin: 10px;
+}
+
+.right_home__adding_boxy--title{
+    margin: 25px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.right_home__adding_boxy{
+    animation: mover1 4s infinite alternate ease-in-out;
+    animation-name: mover1;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes mover1 {
+  0%   { transform: scale(1) } /* hacia arriba */
+  
+  50% { transform: scale(1.01) } /* vuelve arriba */
+  
+  100%  { transform: scale(1) }  /* hacia abajo */
+   /* vuelve arriba */
+}

@@ -1,0 +1,31 @@
+{% extends 'auth/home.html' %}
+
+{% block title %}| Inicio{%endblock title%}
+
+{% block adding %}
+<div class="right_home__adding_boxy">
+
+    <h2 class="right_home__adding_boxy--title">Puedes controlar tus diferentes ambientes</h2>
+
+
+    {% block boxy %} {% endblock %}
+
+
+    {% for sala in salas %}
+    <div class="boxy-adding">
+        <a class="element1" href="{{ url_for('boxy.add_boxy') }}"><img  src="{{url_for('boxy.static', filename='boxy/images/rooms.jpg')}}" alt="Logo de boxy"></a>
+        
+        <a class="element2" href="{{ url_for('boxy.add_boxy') }}">
+            
+                <h4>Hecha un vistazo en {{sala}}</h4>
+            
+        </a> 
+
+        <a class="element3" href="{{ url_for('boxy.add_boxy') }}"><img src="{{url_for('boxy.static', filename='boxy/images/lupa.jpg')}}" alt="Logo de adding"></a>
+    </div>
+    {%endfor%}
+
+    
+
+</div>
+{% endblock %}
